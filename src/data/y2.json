@@ -1,0 +1,81 @@
+[
+  {
+    "subject": "CSC261 Statistics for Scientists",
+    "lecturer": "Dr.Debajyoti",
+    "startTime": "13.30",
+    "endTime": "16.30",
+    "room": "CB2312",
+    "year": [2],
+    "fastTrack": false,
+    "day": "Monday"
+  },
+  {
+    "subject": "CSC217 OS",
+    "lecturer": "Asst.Prof.Dr.Narongrit",
+    "startTime": "10.30",
+    "endTime": "12.00",
+    "room": "CB2308",
+    "year": [2],
+    "fastTrack": false,
+    "day": "Tuesday"
+  },
+  {
+    "subject": "CSC231 Agile Software Engineering",
+    "lecturer": "Dr. Vithida/Assoc.Prof.Dr. Vajirasak",
+    "startTime": "13.30",
+    "endTime": "16.30",
+    "room": "CB2308",
+    "year": [2],
+    "fastTrack": false,
+    "day": "Tuesday"
+  },
+  {
+    "subject": "LNG322 Academic Writing I (G.2)",
+    "lecturer": "Aj.John",
+    "startTime": "9.00",
+    "endTime": "12.00",
+    "room": "CB2305",
+    "year": [2],
+    "fastTrack": false,
+    "day": "Wednesday"
+  },
+  {
+    "subject": "LNG322 Academic Writing I (G.3)",
+    "lecturer": "Aj.SOLA",
+    "startTime": "9.00",
+    "endTime": "12.00",
+    "room": "Online",
+    "year": [2],
+    "fastTrack": false,
+    "day": "Thursday"
+  },
+  {
+    "subject": "CSC234 User-Centered Mobile App. Dev.",
+    "lecturer": "Assoc.Prof.Dr.Vajirasak",
+    "startTime": "14.00",
+    "endTime": "18.00",
+    "room": "Classroom 4/2",
+    "year": [2],
+    "fastTrack": false,
+    "day": "Thursday"
+  },
+  {
+    "subject": "CSC217 OS",
+    "lecturer": "Asst.Prof.Dr.Narongrit",
+    "startTime": "13.00",
+    "endTime": "14.30",
+    "room": "CB2306",
+    "year": [2],
+    "fastTrack": false,
+    "day": "Friday"
+  },
+  {
+    "subject": "GEN351 Modern Management and Leadership (G.33-34)",
+    "startTime": "8.30",
+    "endTime": "11.30",
+    "room": "Online",
+    "year": [2],
+    "fastTrack": false,
+    "day": "Friday"
+  }
+]

@@ -1,0 +1,199 @@
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  background: url("/assets/BG.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "SF UI Display Thin";
+  font-weight: 500;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "SF UI Display Ultralight";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Display Ultralight"),
+    url("/fonts/sf-ui-display-ultralight-58646b19bf205.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Display Thin";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Display Thin"),
+    url("/fonts/sf-ui-display-thin-58646e9b26e8b.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Display Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Display Light"),
+    url("/fonts/sf-ui-display-light-58646b33e0551.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Display Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Display Medium"),
+    url("/fonts/sf-ui-display-medium-58646be638f96.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Display Semibold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Display Semibold"),
+    url("/fonts/sf-ui-display-semibold-58646eddcae92.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Display Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Display Bold"),
+    url("/fonts/sf-ui-display-bold-58646a511e3d9.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Display Heavy";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Display Heavy"),
+    url("/fonts/sf-ui-display-heavy-586470160b9e5.woff") format("woff");
+}
+
+@font-face {
+  font-family: "SF UI Display Black";
+  font-style: normal;
+  font-weight: normal;
+  src: local("SF UI Display Black"),
+    url("/fonts/sf-ui-display-black-58646a6b80d5a.woff") format("woff");
+}
+
+#app {
+  height: 100%;
+}
+#table-container {
+  width: 90%;
+  height: 90%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(40px);
+  border: 1px solid #ffffff4b;
+  border-radius: 25px;
+  padding: 2rem 1.5rem 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.table-container-head {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  height: 10%;
+}
+.table-head-title {
+  font-family: "SF UI Display SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #ff6d3f;
+}
+.table-head-title .white {
+  color: #fff;
+}
+.table-head-select {
+  width: 15%;
+}
+.table-head-select select {
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(100px);
+  border-radius: 10px;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  color: #fff;
+  width: 100%;
+  outline: none;
+  -webkit-appearance: none;
+  background-image: url("/assets/icons/expand_more_24px.png");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-size: 12px;
+  background-origin: content-box, padding-box;
+  background-position-y: center;
+}
+.table-head-select select::after {
+  width: 25px;
+  height: 25px;
+}
+.timetable {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  height: 90%;
+}
+.table {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.table-row {
+  display: flex;
+  height: 12.5%;
+  padding-bottom: 0.5rem;
+}
+.table-row-left {
+  color: white;
+  font-size: 0.8rem;
+}
+.table-head-col {
+  color: white;
+}
+.table-col {
+  color: white;
+}
+
+.subject {
+  width: 100%;
+  display: flex;
+  height: 100%;
+}
+.subject-grip {
+  width: 7px;
+  background: #ff6d3f;
+  border-radius: 5px 0px 0px 5px;
+}
+.subject-content {
+  background: rgba(0, 0, 0, 0.65);
+  border-radius: 0px 5px 5px 0px;
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.subject-time {
+  font-size: 0.8rem;
+  padding-bottom: 0.2rem;
+  font-size: normal;
+}
+.subject-time .subject-room {
+  color:#FF6D3F;
+  font-weight: 600;
+}
+.subject-name {
+  font-weight: bold;
+}
