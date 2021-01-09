@@ -1,13 +1,16 @@
 import {plan} from '../../config/plan';
-const TableHead = () => {
+const TableHead = ({onChangePlan}) => {
+    const handleChange = (e) => {
+        onChangePlan(e.target.value);
+    }
     return (
         <div className="table-container-head">
             <div className="table-head-title">CS @SIT <span className="white">: TIMETABLE</span></div>
             <div className="table-head-select">
-                <select>
+                <select onChange={handleChange}>
                     {
                         plan.map((el,index) =>{
-                            return <option value={el} key={index}>{el}</option>
+                            return <option value={el.value} key={index}>{el.text}</option>
                         })
                     }
                 </select>

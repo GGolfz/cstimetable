@@ -1,0 +1,108 @@
+[
+  {
+    "subject": "LNG222 Academic Listening and Speaking in International Contexts (G.5)",
+    "lecturer": "Aj John",
+    "startTime": "9.00",
+    "endTime": "12.00",
+    "room": "CB2304",
+    "year": [1],
+    "fastTrack": false,
+    "day": "Monday"
+  },
+  {
+    "subject": "CSC209 Data Structure",
+    "lecturer": "Asst.Prof.Dr.Narongrit",
+    "startTime": "9.00",
+    "endTime": "10.30",
+    "room": "CB2308",
+    "year": [1],
+    "fastTrack": false,
+    "day": "Tuesday"
+  },
+  {
+    "subject": "GEN101 Physical Education (G.45)",
+    "startTime": "10.30",
+    "endTime": "12.30",
+    "room": "GYM",
+    "year": [1],
+    "fastTrack": false,
+    "day": "Tuesday"
+  },
+  {
+    "subject": "GEN101 Physical Education (G.46)",
+    "startTime": "13.30",
+    "endTime": "15.30",
+    "room": "GYM",
+    "year": [1],
+    "fastTrack": false,
+    "day": "Tuesday"
+  },
+  {
+    "subject": "CSC105 Web Application Development",
+    "lecturer": "Asst. Prof. Dr. Chonlameth",
+    "startTime": "13.00",
+    "endTime": "17.00",
+    "room": "Classroom 4/2",
+    "year": [1],
+    "fastTrack": false,
+    "day": "Wednesday"
+  },
+  {
+    "subject": "CSC103 Computer Architecture and Organization",
+    "startTime": "9.00",
+    "endTime": "12.00",
+    "room": "CB2312",
+    "year": [1],
+    "fastTrack": false,
+    "day": "Wednesday"
+  },
+  {
+    "subject": "GEN241 Beauty of Life (G.31-33)",
+    "startTime": "13.30",
+    "endTime": "16.30",
+    "room": "Online",
+    "year": [1],
+    "fastTrack": false,
+    "day": "Thursday"
+  },
+  {
+    "subject": "LNG222 Academic Listening and Speaking in International Contexts (G.6)",
+    "lecturer": "Aj John",
+    "startTime": "9.00",
+    "endTime": "12.00",
+    "room": "CB2304",
+    "year": [1],
+    "fastTrack": false,
+    "day": "Friday"
+  },
+  {
+    "subject": "CSC209 Data Structure",
+    "lecturer": "Asst.Prof.Dr.Narongrit",
+    "startTime": "14.30",
+    "endTime": "16.00",
+    "room": "CB2308",
+    "year": [1],
+    "fastTrack": false,
+    "day": "Friday"
+  },
+  {
+    "subject": "CSC233 Programming Paradigms",
+    "lecturer": "Asst. Prof.Dr.Pornchai",
+    "startTime": "13.00",
+    "endTime": "14.30",
+    "room": "CB2308",
+    "year": [1],
+    "fastTrack": false,
+    "day": "Friday"
+  },
+  {
+    "subject": "CSC261 Statistics for Scientists",
+    "lecturer": "Dr.Debajyoti",
+    "startTime": "13.30",
+    "endTime": "16.30",
+    "room": "CB2312",
+    "year": [1,2],
+    "fastTrack": true,
+    "day": "Monday"
+  }
+]

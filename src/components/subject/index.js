@@ -1,10 +1,12 @@
-const Subject = ({keyCode}) => {
+import { useEffect, useState } from "preact/hooks";
+
+const Subject = ({value}) => {
     return (
         <div className="subject">
             <div className="subject-grip"></div>
             <div className="subject-content">
-                <div className="subject-time">10.30 - 12.00 <span className="subject-room">@CB2308</span></div>
-                <div className="subject-name">CSC217:OS</div>
+                <div className="subject-time">{value.time} <span className="subject-room">@{value.room}</span></div>
+                <div className="subject-name">{value.subject}</div>
             </div>
         </div>
     )

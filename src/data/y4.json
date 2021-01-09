@@ -1,0 +1,62 @@
+[
+  {
+    "subject": "CSC531 Data Mining",
+    "lecturer": "Asst.Prof.Dr.Chakarida",
+    "startTime": "13.30",
+    "endTime": "16.30",
+    "room": "Training room 5",
+    "year": [3, 4],
+    "fastTrack": false,
+    "day": "Monday"
+  },
+  {
+    "subject": "CSC322 Intelligent Infrastructure",
+    "lecturer": "Dr.Anuchart",
+    "startTime": "9.00",
+    "endTime": "12.00",
+    "room": "CB2304",
+    "year": [3, 4],
+    "fastTrack": false,
+    "day": "Tuesday"
+  },
+  {
+    "subject": "LNG322 Academic Writing I (G.5)",
+    "lecturer": "Aj.John",
+    "startTime": "13.30",
+    "endTime": "16.30",
+    "room": "CB2305",
+    "year": [4],
+    "fastTrack": false,
+    "day": "Tuesday"
+  },
+  {
+    "subject": "CSC536 Data Visualization Fundamentals",
+    "lecturer": "Asst.Prof.Dr.Pornchai",
+    "startTime": "13.30",
+    "endTime": "16.30",
+    "room": "CB2313",
+    "year": [3, 4],
+    "fastTrack": false,
+    "day": "Wednesday"
+  },
+  {
+    "subject": "CSC532 Machine Learning",
+    "lecturer": "Assoc.Prof.Dr.Jonathan",
+    "startTime": "9.00",
+    "endTime": "12.00",
+    "room": "Training room 1",
+    "year": [3, 4],
+    "fastTrack": false,
+    "day": "Friday"
+  },
+  {
+    "subject": "CSC493 Advanced Software Testing",
+    "lecturer": "Guest Lecturer",
+    "startTime": "12.00",
+    "endTime": "15.00",
+    "room": "Training room 1",
+    "year": [3, 4],
+    "fastTrack": false,
+    "day": "Friday"
+  }
+]
