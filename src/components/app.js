@@ -6,7 +6,7 @@ const App = () => {
 	const [subject,setSubject] = useState([])
 	const [currentPlan,setPlan] = useState(plan[0].value)
 	useEffect(()=>{
-		fetch(`/data/${currentPlan}.json`).then(res=>{
+		fetch(`/assets/data/${currentPlan}.json`).then(res=>{
 			return res.json()
 		}).then(data=>{
 			setSubject(data)
