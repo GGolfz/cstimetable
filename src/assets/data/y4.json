@@ -12,7 +12,7 @@
   {
     "subject": "CSC322 Intelligent Infrastructure",
     "lecturer": "Dr.Anuchart",
-    "startTime": "9.00",
+    "startTime": "09.00",
     "endTime": "12.00",
     "room": "CB2304",
     "year": [3, 4],
@@ -42,7 +42,7 @@
   {
     "subject": "CSC532 Machine Learning",
     "lecturer": "Assoc.Prof.Dr.Jonathan",
-    "startTime": "9.00",
+    "startTime": "09.00",
     "endTime": "12.00",
     "room": "Training room 1",
     "year": [3, 4],

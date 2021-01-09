@@ -1,3 +1,4 @@
+import { Fragment } from "preact";
 import { useEffect, useState } from "preact/hooks";
 import { day } from "../../config/day";
 import { time } from "../../config/time";
@@ -31,6 +32,7 @@ const Table = ({subject}) => {
         tableTemp.push(tableTempDay);
     }
     setTable(tableTemp);
+    console.log(tableTemp)
   }
   const getSubject = async (d,ti) => {
     for(let s of subject){
@@ -44,6 +46,7 @@ const Table = ({subject}) => {
                     room: s.room,
                     subject: s.subject
                 }
+                console.log(s,d,ti,index,start,end)
                 return {value,width:end-start}
             }
         }
@@ -65,6 +68,7 @@ const Table = ({subject}) => {
         </div>
         {table.map((row, index) => {
           return (
+            <Fragment>
             <div className="table-row">
               <div className="table-row-left" style={{ width: `${200 / 26}%` }}>
                 {left[index]}
@@ -83,7 +87,21 @@ const Table = ({subject}) => {
                   </div>
                 );
               })}
+              <div className="linerow">
+              {
+                  time.map((col,index)=> {
+                    if(index == 0){
+                      return <div className="linerowhead" style={{width:`${200/26}%`}}> </div>
+                    }
+                    if(index % 2 == 0 ){
+                    return (
+                      <div className="line" style={{width:`${200/26}%`}}/>
+                    )}
+                  })
+                }
+                </div>
             </div>
+            </Fragment>
           );
         })}
       </div>

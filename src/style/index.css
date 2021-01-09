@@ -104,10 +104,10 @@ body {
   height: 10%;
 }
 .table-head-title {
-  font-family: "SF UI Display SemiBold";
+  font-family: "SF UI Display Medium";
   font-style: normal;
-  font-weight: 600;
-  font-size: 1.5rem;
+  font-weight: 500;
+  font-size: 1.2rem;
   color: #ff6d3f;
 }
 .table-head-title .white {
@@ -117,7 +117,7 @@ body {
   width: 15%;
 }
 .table-head-select select {
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(100px);
   border-radius: 10px;
   border: none;
@@ -153,13 +153,15 @@ body {
 .table-row-head {
 	display: flex;
 	height: 9%;
-	padding-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.8rem;
 	
 }
 .table-row {
   display: flex;
   height: 13%;
   padding-bottom: 0.5rem;
+  position: relative;
 }
 .table-row-left {
   color: white;
@@ -183,7 +185,7 @@ body {
   border-radius: 5px 0px 0px 5px;
 }
 .subject-content {
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 0px 5px 5px 0px;
   flex: 1;
   padding: 0.5rem 0.75rem;
@@ -192,8 +194,8 @@ body {
   overflow: auto;
 }
 .subject-time {
-  font-size: 0.65rem;
-  padding-bottom: 0.2rem;
+  font-size: 0.4rem;
+  padding-bottom: 0.5rem;
   font-weight: 400;
 }
 .subject-time .subject-room {
@@ -202,5 +204,19 @@ body {
 }
 .subject-name {
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+}
+.linerow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  z-index:-1;
+}
+.line {
+  height: 100%;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);;
+}
+.linerowhead {
+  height: 100%;
 }
