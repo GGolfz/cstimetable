@@ -190,12 +190,11 @@ body {
   display: flex;
   flex-direction: column;
   overflow: auto;
-  justify-content: space-around;
 }
 .subject-time {
   font-size: 0.65rem;
   padding-bottom: 0.2rem;
-  font-size: normal;
+  font-weight: 400;
 }
 .subject-time .subject-room {
   color:#FF6D3F;
