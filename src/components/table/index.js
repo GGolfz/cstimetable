@@ -57,11 +57,16 @@ const Table = ({ subject }) => {
     return (
       <div className="table">
         <div className="table-row-head">
-              <div className="table-head-left" style={{ width: `${200 / 24}%` }}>
-              </div>
+          <div
+            className="table-head-left"
+            style={{ width: `${200 / 24}%`, height: `${200 / 24}%` }}
+          ></div>
           {head.map((v, i) => {
             return (
-              <div className="table-head-col" style={{ width: `${200 / 24}%` }}>
+              <div
+                className="table-head-col"
+                style={{ width: `${200 / 24}%`, height: `${200 / 24}%` }}
+              >
                 {v}
               </div>
             );
@@ -73,7 +78,10 @@ const Table = ({ subject }) => {
               <div className="table-row">
                 <div
                   className="table-row-left"
-                  style={{ width: `${200 / 24}%` }}
+                  style={{
+                    width: `${200 / 24}%`,
+                    height: `${ 200 / 24}%`,
+                  }}
                 >
                   {left[index]}
                 </div>
@@ -81,7 +89,10 @@ const Table = ({ subject }) => {
                   return (
                     <div
                       className="table-col"
-                      style={{ width: `${(col.width * 100) / 24}%` }}
+                      style={{
+                        width: `${(col.width * 100) / 24}%`,
+                        height: `${(col.width * 100) / 24}%`,
+                      }}
                     >
                       {col.value == "" ? (
                         col.value
@@ -94,14 +105,17 @@ const Table = ({ subject }) => {
                 <div className="linerow">
                   <div
                     className="linerowhead"
-                    style={{ width: `${200 / 24}%` }}
+                    style={{ width: `${200 / 24}%`, height: `${200 / 24}%` }}
                   />
                   {time.map((col, index) => {
                     if (index % 2 == 0) {
                       return (
                         <div
                           className="line"
-                          style={{ width: `${200 / 24}%` }}
+                          style={{
+                            width: `${200 / 24}%`,
+                            height: `${200 / 24}%`,
+                          }}
                         />
                       );
                     }
