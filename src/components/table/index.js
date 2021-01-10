@@ -18,7 +18,7 @@ const Table = ({ subject }) => {
         times.push(el[0] == "0" ? el.substring(1) : el);
       }
     });
-    setHead(["", ...times]);
+    setHead([...times]);
     setLeft([...days]);
     let tableTemp = [];
     for (let i = 0; i < day.length; i++) {
@@ -57,6 +57,8 @@ const Table = ({ subject }) => {
     return (
       <div className="table">
         <div className="table-row-head">
+              <div className="table-head-left" style={{ width: `${200 / 24}%` }}>
+              </div>
           {head.map((v, i) => {
             return (
               <div className="table-head-col" style={{ width: `${200 / 24}%` }}>

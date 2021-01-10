@@ -97,6 +97,76 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media only screen and (max-width: 900px) and (max-height: 600px) {
+  .table {
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+  .table-head-select {
+    width: 30% !important;
+  }
+  .table-row {
+    width: 200%;
+    height: 25% !important;
+    flex: 0 0 auto;
+  }
+  .table-row-head {
+    width: 200%;
+    height: 15% !important;
+    flex: 0 0 auto;
+    padding-top: 2%;
+  }
+  .table-row-left {
+    position: sticky;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .table-head-col {
+    display: inline;
+    flex: 0 0 auto;
+  }
+  .table-head-left {
+    position: sticky;
+    left:0;
+  }
+  .table-col {
+    flex: 0 0 auto;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .table {
+    overflow-x: auto;
+  }
+  .table-head-select {
+    width: 30% !important;
+  }
+  .table-row {
+    width: 200%;
+  }
+  .table-row-head {
+    width: 200%;
+  }
+  .table-row-left {
+    position: sticky;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .table-head-col {
+    display: inline;
+    flex: 0 0 auto;
+  }
+  .table-head-left {
+    position: sticky;
+    left:0;
+  }
+  .table-col {
+    flex: 0 0 auto;
+  }
+}
 .table-container-head {
   display: flex;
   justify-content: space-between;
@@ -153,14 +223,12 @@ body {
 .table-row-head {
 	display: flex;
 	height: 9%;
-  padding-bottom: 0.5rem;
   font-size: 0.8rem;
 	
 }
 .table-row {
   display: flex;
   height: 13%;
-  padding-bottom: 0.5rem;
   position: relative;
 }
 .table-row-left {
@@ -180,6 +248,7 @@ body {
   height: 100%;
   padding-left: .15rem;
   padding-right: .1rem;
+  padding-bottom: .5rem;
 }
 .subject-grip {
   width: 7px;
