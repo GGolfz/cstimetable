@@ -31,7 +31,6 @@ const Table = ({ subject }) => {
       tableTemp.push(tableTempDay);
     }
     setTable(tableTemp);
-    console.log(tableTemp);
   };
   const getSubject = async (d, ti) => {
     for (let s of subject) {
@@ -45,7 +44,6 @@ const Table = ({ subject }) => {
             room: s.room,
             subject: s.subject,
           };
-          console.log(s, d, ti, index, start, end);
           return { value, width: end - start };
         }
       }
