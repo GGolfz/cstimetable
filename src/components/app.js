@@ -25,7 +25,6 @@ const App = () => {
       if (year == "") {
         year = "1";
       }
-      fetchData(year, fastTrack);
       let plan = "y" + year;
       if (fastTrack) {
         plan += "-fast";
@@ -43,7 +42,7 @@ const App = () => {
   useEffect(() => {
     if (currentPlan.length != 0) {
       const data = currentPlan.split("-");
-      fetchData(data[0][1], data[1] != "" ? "true" : "false");
+      fetchData(data[0][1], data[1] ? "true" : "false");
       window.localStorage.setItem("plan", currentPlan);
     }
   }, [currentPlan]);
