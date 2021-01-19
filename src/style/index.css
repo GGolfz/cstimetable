@@ -166,6 +166,8 @@ body {
   }
   .table-row-left {
     width: 100% !important;
+    display: flex;
+    justify-content: center;
   }
   .table-col {
     width: 100% !important;
