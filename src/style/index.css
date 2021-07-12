@@ -253,6 +253,12 @@ body {
     overflow: auto;
     border-radius: 0px 5px 5px 0px;
   }
+  .subject-time  {
+    font-size: 0.8rem;
+  }
+  .subject-time  {
+    font-size: 1.2rem;
+  }
 }
 .table-container-head {
   display: flex;
