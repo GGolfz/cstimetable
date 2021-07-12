@@ -1,4 +1,8 @@
-import './style';
-import App from './components/app';
+import ReactGA from 'react-ga'
+import './style'
+import App from './components/app'
 
-export default App;
+ReactGA.initialize('G-FHDZRSZLCS')
+ReactGA.pageview(window.location.pathname + window.location.search)
+
+export default App
