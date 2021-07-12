@@ -253,6 +253,18 @@ body {
     overflow: auto;
     border-radius: 0px 5px 5px 0px;
   }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  .subject-time  {
+    font-size: 0.65rem !important;
+  }
+  .subject-name  {
+    font-size: 1rem !important;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
   .subject-time  {
     font-size: 0.8rem !important;
   }
@@ -260,6 +272,7 @@ body {
     font-size: 1.2rem !important;
   }
 }
+
 .table-container-head {
   display: flex;
   justify-content: space-between;
