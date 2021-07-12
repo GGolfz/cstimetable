@@ -47,7 +47,7 @@ const App = () => {
 		}
 	}, [currentPlan])
 	const fetchData = async (year, fasttrack) => {
-		const url = `https://timetable.cscms.me/api?year=${year}&fastTrack=${fasttrack}`
+		const url = `/api?year=${year}&fastTrack=${fasttrack}`
 		// const url = `/assets/data/${currentPlan}.json`;
 		await fetch(url)
 			.then(res => {
