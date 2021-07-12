@@ -3,6 +3,6 @@ import './style'
 import App from './components/app'
 
 ReactGA.initialize('G-FHDZRSZLCS')
-ReactGA.pageview(window.location.pathname + window.location.search)
+ReactGA.pageview('/')
 
 export default App
