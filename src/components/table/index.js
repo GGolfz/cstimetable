@@ -7,9 +7,11 @@ const Table = ({ subject }) => {
   const [table, setTable] = useState([]);
   const [head, setHead] = useState([]);
   const [left, setLeft] = useState([]);
+  
   useEffect(() => {
     createTable();
   }, [subject]);
+
   const createTable = async () => {
     let days = day.map((el) => el.substring(0, 3).toUpperCase());
     let times = [];
@@ -32,6 +34,7 @@ const Table = ({ subject }) => {
     }
     setTable(tableTemp);
   };
+
   const getSubject = async (d, ti) => {
     for (let s of subject) {
       if (s.day == d) {
@@ -58,8 +61,8 @@ const Table = ({ subject }) => {
           <div
             className="table-head-left"
             style={{ width: `${200 / 24}%`, height: `${200 / 24}%` }}
-          ></div>
-          {head.map((v, i) => {
+          />
+          {head.map(v => {
             return (
               <div
                 className="table-head-col"
@@ -78,12 +81,12 @@ const Table = ({ subject }) => {
                   className="table-row-left"
                   style={{
                     width: `${200 / 24}%`,
-                    height: `${ 200 / 24}%`,
+                    height: `${200 / 24}%`,
                   }}
                 >
                   {left[index]}
                 </div>
-                {row.map((col, ind) => {
+                {row.map(col => {
                   return (
                     <div
                       className="table-col"
@@ -105,7 +108,7 @@ const Table = ({ subject }) => {
                     className="linerowhead"
                     style={{ width: `${200 / 24}%`, height: `${200 / 24}%` }}
                   />
-                  {time.map((col, index) => {
+                  {time.map((_, index) => {
                     if (index % 2 == 0) {
                       return (
                         <div
