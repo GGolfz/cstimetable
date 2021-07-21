@@ -25,7 +25,7 @@ const App = () => {
 			if (year == '') {
 				year = '1'
 			}
-			let plan = 'y' + year
+			let plan = `y${year}`
 			if (fastTrack) {
 				plan += '-fast'
 			}
@@ -48,7 +48,6 @@ const App = () => {
 	}, [currentPlan])
 	const fetchData = async (year, fasttrack) => {
 		const url = `/api?year=${year}&fastTrack=${fasttrack}`
-		// const url = `/assets/data/${currentPlan}.json`;
 		await fetch(url)
 			.then(res => {
 				return res.json()
