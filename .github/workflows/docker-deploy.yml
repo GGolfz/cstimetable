@@ -1,0 +1,40 @@
+name: Build, Push, and Deploy
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-push-trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v3
+        with:
+          images: thetkpark/cs-timetable-client
+          tags: |
+            type=raw,value=latest
+            type=raw,value=${{ github.sha }}
+      - name: Docker Login
+        uses: docker/login-action@v1.10.0
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v2.6.1
+        with:
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+      - name: Trigger Deployment
+        uses: fjogeleit/http-request-action@v1.8.0
+        if: ${{ github.event_name != 'pull_request' }}
+        with:
+          url: https://api.github.com/repos/thetkpark/cscms-services-deployment/dispatches
+          method: POST
+          data: '{"event_type": "timetable_client"}'
+          username: ${{secrets.ACCESS_TOKEN}}
