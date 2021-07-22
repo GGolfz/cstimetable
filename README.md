@@ -1,22 +1,15 @@
-# cstimetable
+# CS Timetable
 
-## CLI Commands
+## About This Project
 
-``` bash
-# install dependencies
-npm install
+The Progressive Web Application for showing the timetable of Computer Science student supports on Desktop, Tablet, and Mobile.
 
-# serve with hot reload at localhost:8080
-npm run dev
+## Tech Stack
 
-# build for production with minification
-npm run build
+Frontend Framework: PreactJS
 
-# test the production build locally
-npm run serve
+## Project Contributor
 
-# run tests with jest and enzyme
-npm run test
-```
-
-For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
+- Wisarut Kitticharoenphonngam (<a href="https://github.com/ggolfz">GGolfz</a>) [Frontend Developer]
+- Sethanant Pipatpakorn (<a href="https://github.com/thetkpark">thetkpark</a>) [Backend Developer]
+- Kittiyaporn Takrudthieng (<a href="https://github.com/GelidGrapesGG">GelidGrapesGG</a>) [Designer]
