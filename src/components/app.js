@@ -61,6 +61,7 @@ const App = () => {
       })
       .then((data) => {
         setSubject(data);
+        setJSONText(JSON.stringify(data))
       });
   };
   const handleChangePlan = (p) => {
