@@ -11,6 +11,14 @@ const App = () => {
     let attr = window.location.search;
     let year = "";
     let fastTrack = false;
+    // Get custom json plan from localstorage
+    const customJSONText = localStorage.getItem("customJSON");
+    if (customJSONText) {
+      localStorage.setItem("plan", "custom")
+      setJSONText(customJSONText)
+      setPlan("custom")
+      return
+    }
     if (attr.length != 0) {
       attr = attr.split("?")[1].split("&");
       for (let i of attr) {
@@ -84,6 +92,8 @@ const App = () => {
     setModal(true);
   };
   const generateCustomTable = () => {
+    localStorage.setItem("customJSON", jsonText);
+    localStorage.setItem("plan", "custom")
     setPlan("custom");
     setModal(false);
   };
