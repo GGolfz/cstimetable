@@ -87,6 +87,9 @@ body {
 
 #app {
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #table-container {
   width: 85%;
@@ -102,7 +105,7 @@ body {
 .subject-name.mini {
   display: none;
 }
-@media only screen and (max-width: 768px) and (orientation:portrait) {
+@media only screen and (max-width: 768px) and (orientation: portrait) {
   .table {
     height: 200% !important;
   }
@@ -154,7 +157,7 @@ body {
     width: 9% !important;
     height: 100% !important;
     flex-direction: column !important;
-    margin-right: 1rem!important;
+    margin-right: 1rem !important;
   }
   .table-head-left {
     width: 100% !important;
@@ -256,19 +259,19 @@ body {
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 1439px) {
-  .subject-time  {
+  .subject-time {
     font-size: 0.65rem !important;
   }
-  .subject-name  {
+  .subject-name {
     font-size: 1rem !important;
   }
 }
 
 @media only screen and (min-width: 1440px) {
-  .subject-time  {
+  .subject-time {
     font-size: 0.8rem !important;
   }
-  .subject-name  {
+  .subject-name {
     font-size: 1.2rem !important;
   }
 }
@@ -290,7 +293,69 @@ body {
   color: #fff;
 }
 .table-head-select {
-  width: 15%;
+  width: 40%;
+  display: flex;
+}
+.generate-button {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(100px);
+  border-radius: 10px;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  color: #fff;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 5;
+}
+.modal-content {
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(40px);
+  border: 1px solid #ffffff4b;
+  border-radius: 25px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+textarea {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(100px);
+  border-radius: 10px;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  color: #fff;
+  outline: none;
+  width: 300px;
+  height: 200px;
+  margin-bottom: 2rem;
+}
+.modal-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+}
+.modal-title {
+  color: #fff;
+  font-size: 1.5rem;
+}
+.modal-action {
+  display: flex;
 }
 .table-head-select select {
   background: rgba(0, 0, 0, 0.4);
