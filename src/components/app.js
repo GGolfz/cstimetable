@@ -54,25 +54,26 @@ const App = () => {
     }
   }, [currentPlan]);
   const fetchData = async (year, fasttrack) => {
-    const url = `/api?year=${year}&fastTrack=${fasttrack}`;
+    const url = `https://timetable.cscms.me/api?year=${year}&fastTrack=${fasttrack}`;
     await fetch(url)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
+        console.log(data)
         setSubject(data);
         let json = `[\n`;
         data.forEach((s) => {
           json += `{
-  "subject": "${s.subject}",\n
-  "lecturer": "${s.lecturer}",\n
-  "startTime": "${s.startTime}",\n
-  "endTime": "${s.endTime}",\n
-  "room": "${s.room}",\n
+  "subject": "${s.subject}",
+  "lecturer": "${s.lecturer}",
+  "startTime": "${s.startTime}",
+  "endTime": "${s.endTime}",
+  "room": "${s.room}",
   "day": "${s.day}"\n},\n`;
         });
-        json = json.substring(json.length - 1)
-        json += "]";
+        json = json.substring(0,json.length - 2)
+        json += "\n]";
         setJSONText(json)
       });
   };
