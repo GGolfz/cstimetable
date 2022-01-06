@@ -61,7 +61,18 @@ const App = () => {
       })
       .then((data) => {
         setSubject(data);
-        setJSONText(JSON.stringify(data))
+        let json = `[\n`;
+        data.forEach((s) => {
+          json += `{
+              "subject": "${s.subject}",\n
+              "lecturer": "${s.lecturer}",\n
+              "startTime": "${s.startTime}",\n
+              "endTime": "${s.endTime}",\n
+              "room": "${s.room}",\n
+              "day": "${s.day}"\n
+              }\n`;
+        });
+        json += "]";
       });
   };
   const handleChangePlan = (p) => {
