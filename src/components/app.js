@@ -7,6 +7,7 @@ const App = () => {
   const [currentPlan, setPlan] = useState("");
   const [modal, setModal] = useState(false);
   const [jsonText, setJSONText] = useState("");
+  const [isCustomAvailable, setIsCustomAvailable] = useState(false);
   useEffect(() => {
     let attr = window.location.search;
     let year = "";
@@ -17,6 +18,7 @@ const App = () => {
       localStorage.setItem("plan", "custom")
       setJSONText(customJSONText)
       setPlan("custom")
+      setIsCustomAvailable(true)
       return
     }
     if (attr.length != 0) {
@@ -86,6 +88,9 @@ const App = () => {
       });
   };
   const handleChangePlan = (p) => {
+    if (p === "custom") {
+      setJSONText(localStorage.getItem("customJSON"))
+    }
     setPlan(p);
   };
   const handleOpenGenerate = () => {
@@ -95,6 +100,7 @@ const App = () => {
     localStorage.setItem("customJSON", jsonText);
     localStorage.setItem("plan", "custom")
     setPlan("custom");
+    setIsCustomAvailable(true)
     setModal(false);
   };
   return (
@@ -113,6 +119,7 @@ const App = () => {
           currentPlan={currentPlan}
           onChangePlan={handleChangePlan}
           openGenerate={handleOpenGenerate}
+          isCustomAvailable={isCustomAvailable}
         />
         <TimeTable subject={subject} />
       </div>
