@@ -73,6 +73,7 @@ const App = () => {
               }\n`;
         });
         json += "]";
+        setJSONText(json)
       });
   };
   const handleChangePlan = (p) => {
