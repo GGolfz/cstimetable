@@ -1,5 +1,5 @@
 import { plan } from "../../config/plan";
-const TableHead = ({ currentPlan, onChangePlan, openGenerate }) => {
+const TableHead = ({ currentPlan, onChangePlan, openGenerate, isCustomAvailable }) => {
   const handleChange = (e) => {
     onChangePlan(e.target.value);
   };
@@ -13,7 +13,7 @@ const TableHead = ({ currentPlan, onChangePlan, openGenerate }) => {
           Generate
         </button>
         <select onChange={handleChange} value={currentPlan}>
-          {currentPlan === "custom" ? (
+          {isCustomAvailable ? (
             <option value="custom" key="custom">
               Custom
             </option>

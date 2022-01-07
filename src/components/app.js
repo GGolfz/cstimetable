@@ -7,7 +7,14 @@ const App = () => {
   const [currentPlan, setPlan] = useState("");
   const [modal, setModal] = useState(false);
   const [jsonText, setJSONText] = useState("");
+  const [isCustomAvailable, setIsCustomAvailable] = useState(false);
   useEffect(() => {
+    const customJSONText = localStorage.getItem("customJSON");
+    if (customJSONText) {
+      setJSONText(customJSONText)
+      setIsCustomAvailable(true)
+    }
+
     let attr = window.location.search;
     let year = "";
     let fastTrack = false;
@@ -34,23 +41,21 @@ const App = () => {
       }
       setPlan(plan);
     } else {
-      let plan = window.localStorage.getItem("plan");
-      if (plan) {
-        setPlan(plan);
-      } else {
-        setPlan("y1");
-      }
+      setPlan(window.localStorage.getItem("plan") || "y1");
+      
     }
   }, []);
   useEffect(() => {
     if (currentPlan.length != 0) {
       if (currentPlan === "custom") {
-        setSubject(JSON.parse(jsonText));
+        const customJSONText = localStorage.getItem("customJSON");
+        setJSONText(customJSONText)
+        setSubject(JSON.parse(customJSONText));
       } else {
         const data = currentPlan.split("-");
         fetchData(data[0][1], data[1] ? "true" : "false");
-        window.localStorage.setItem("plan", currentPlan);
       }
+      window.localStorage.setItem("plan", currentPlan);
     }
   }, [currentPlan]);
   const fetchData = async (year, fasttrack) => {
@@ -60,7 +65,6 @@ const App = () => {
         return res.json();
       })
       .then((data) => {
-        console.log(data)
         setSubject(data);
         let json = `[\n`;
         data.forEach((s) => {
@@ -77,14 +81,13 @@ const App = () => {
         setJSONText(json)
       });
   };
-  const handleChangePlan = (p) => {
-    setPlan(p);
-  };
   const handleOpenGenerate = () => {
     setModal(true);
   };
   const generateCustomTable = () => {
+    localStorage.setItem("customJSON", jsonText);
     setPlan("custom");
+    setIsCustomAvailable(true)
     setModal(false);
   };
   return (
@@ -101,8 +104,9 @@ const App = () => {
       <div id="table-container">
         <TableHead
           currentPlan={currentPlan}
-          onChangePlan={handleChangePlan}
+          onChangePlan={setPlan}
           openGenerate={handleOpenGenerate}
+          isCustomAvailable={isCustomAvailable}
         />
         <TimeTable subject={subject} />
       </div>
