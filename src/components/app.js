@@ -9,18 +9,15 @@ const App = () => {
   const [jsonText, setJSONText] = useState("");
   const [isCustomAvailable, setIsCustomAvailable] = useState(false);
   useEffect(() => {
+    const customJSONText = localStorage.getItem("customJSON");
+    if (customJSONText) {
+      setJSONText(customJSONText)
+      setIsCustomAvailable(true)
+    }
+
     let attr = window.location.search;
     let year = "";
     let fastTrack = false;
-    // Get custom json plan from localstorage
-    const customJSONText = localStorage.getItem("customJSON");
-    if (customJSONText) {
-      localStorage.setItem("plan", "custom")
-      setJSONText(customJSONText)
-      setPlan("custom")
-      setIsCustomAvailable(true)
-      return
-    }
     if (attr.length != 0) {
       attr = attr.split("?")[1].split("&");
       for (let i of attr) {
@@ -44,23 +41,21 @@ const App = () => {
       }
       setPlan(plan);
     } else {
-      let plan = window.localStorage.getItem("plan");
-      if (plan) {
-        setPlan(plan);
-      } else {
-        setPlan("y1");
-      }
+      setPlan(window.localStorage.getItem("plan") || "y1");
+      
     }
   }, []);
   useEffect(() => {
     if (currentPlan.length != 0) {
       if (currentPlan === "custom") {
-        setSubject(JSON.parse(jsonText));
+        const customJSONText = localStorage.getItem("customJSON");
+        setJSONText(customJSONText)
+        setSubject(JSON.parse(customJSONText));
       } else {
         const data = currentPlan.split("-");
         fetchData(data[0][1], data[1] ? "true" : "false");
-        window.localStorage.setItem("plan", currentPlan);
       }
+      window.localStorage.setItem("plan", currentPlan);
     }
   }, [currentPlan]);
   const fetchData = async (year, fasttrack) => {
@@ -70,7 +65,6 @@ const App = () => {
         return res.json();
       })
       .then((data) => {
-        console.log(data)
         setSubject(data);
         let json = `[\n`;
         data.forEach((s) => {
@@ -87,18 +81,11 @@ const App = () => {
         setJSONText(json)
       });
   };
-  const handleChangePlan = (p) => {
-    if (p === "custom") {
-      setJSONText(localStorage.getItem("customJSON"))
-    }
-    setPlan(p);
-  };
   const handleOpenGenerate = () => {
     setModal(true);
   };
   const generateCustomTable = () => {
     localStorage.setItem("customJSON", jsonText);
-    localStorage.setItem("plan", "custom")
     setPlan("custom");
     setIsCustomAvailable(true)
     setModal(false);
@@ -117,7 +104,7 @@ const App = () => {
       <div id="table-container">
         <TableHead
           currentPlan={currentPlan}
-          onChangePlan={handleChangePlan}
+          onChangePlan={setPlan}
           openGenerate={handleOpenGenerate}
           isCustomAvailable={isCustomAvailable}
         />
