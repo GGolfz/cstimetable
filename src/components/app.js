@@ -11,8 +11,8 @@ const App = () => {
   useEffect(() => {
     const customJSONText = localStorage.getItem("customJSON");
     if (customJSONText) {
-      setJSONText(customJSONText)
-      setIsCustomAvailable(true)
+      setJSONText(customJSONText);
+      setIsCustomAvailable(true);
     }
 
     let attr = window.location.search;
@@ -42,14 +42,13 @@ const App = () => {
       setPlan(plan);
     } else {
       setPlan(window.localStorage.getItem("plan") || "y1");
-      
     }
   }, []);
   useEffect(() => {
     if (currentPlan.length != 0) {
       if (currentPlan === "custom") {
         const customJSONText = localStorage.getItem("customJSON");
-        setJSONText(customJSONText)
+        setJSONText(customJSONText);
         setSubject(JSON.parse(customJSONText));
       } else {
         const data = currentPlan.split("-");
@@ -76,19 +75,43 @@ const App = () => {
   "room": "${s.room}",
   "day": "${s.day}"\n},\n`;
         });
-        json = json.substring(0,json.length - 2)
+        json = json.substring(0, json.length - 2);
         json += "\n]";
-        setJSONText(json)
+        setJSONText(json);
       });
   };
   const handleOpenGenerate = () => {
     setModal(true);
   };
+  const validateJSONText = () => {
+    try {
+      let json = JSON.parse(jsonText);
+      for (let i of json) {
+        if (
+          !i.subject ||
+          !i.lecturer ||
+          !i.startTime ||
+          !i.endTime ||
+          !i.room ||
+          !i.day
+        ) {
+          return false;
+        }
+      }
+      return true;
+    } catch (err) {
+      return false;
+    }
+  };
   const generateCustomTable = () => {
-    localStorage.setItem("customJSON", jsonText);
-    setPlan("custom");
-    setIsCustomAvailable(true)
-    setModal(false);
+    if (validateJSONText()) {
+      localStorage.setItem("customJSON", jsonText);
+      setPlan("custom");
+      setIsCustomAvailable(true);
+      setModal(false);
+    } else {
+      alert("Invalid JSON Text");
+    }
   };
   return (
     <div id="app">
