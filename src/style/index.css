@@ -147,8 +147,7 @@ body {
     justify-content: center;
   }
   .table-head-select select {
-    min-width: 320px;
-    width: 55% !important;
+    flex: 1 1 auto;
   }
   .table {
     flex-direction: row !important;
